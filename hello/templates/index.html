@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% from 'bootstrap/form.html' import render_form %}
+
+
+{% block content %}
+	<div class="hello-form">
+        {{ render_form(form, action=request.full_path) }}
+    </div>
+	`
+	<h5>{{messages|length }}messages|length
+		<small class="float-right">
+			<a href="#bottom" title="go bottom">&darr;</a>
+		</small>
+	</h5>
+	<div class="list-group">
+		{% for message in messages %}
+			<li>{{message.name}}</li>
+			<li>{{message.body}}</li>
+			<li>{{message.age}}</li>
+			<li>{{message.score}}</li>
+			<li>{{message.timestamp}}</li>
+			<li>-------------------------------------------</li>
+		{% endfor %}
+	</div>
+{% endblock %}
+			
